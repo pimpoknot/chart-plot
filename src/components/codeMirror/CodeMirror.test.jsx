@@ -9,7 +9,7 @@ configure({ adapter: new Adapter() })
 
 describe('test about basic render components', () => {
 
-  // test if CodeEditor is render
+  // test if CodeEditor is render correctly
 
   test('should render correctly', () => {
     shallow(<CodeEditor />, {context: ContextData})
