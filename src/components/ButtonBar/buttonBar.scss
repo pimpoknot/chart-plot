@@ -1,0 +1,26 @@
+  nav {
+    width: 100%;
+    padding: 16px;
+    button {
+      margin-left: 16px;
+      border-radius: 5px;
+      border: none;
+      padding: 10px;
+      background: #2a9df4;
+      text-transform: uppercase;
+      color: white;
+      font-weight: lighter;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+        transition: ease-in-out;
+      }
+    }
+    
+  }
+
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+}
