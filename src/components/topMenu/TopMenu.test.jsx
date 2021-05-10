@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { render } from '@testing-library/react';
 import TopMenu from './TopMenu';
-import { TITLE } from '../../utils'
+import { data } from '../../utils'
 
 it('renders without crash', () => {
     let div = document.createElement('div');
@@ -17,6 +17,6 @@ it('renders navbar correctly', () => {
 
 it('should render name correctly', () => {
     let { getByTestId } = render(<TopMenu />)
-    const correctlyTitle = getByTestId('titleTop-bar')
-    expect(getByTestId(correctlyTitle)).toHaveTextContent('teste')
+    const correctlyTitle = getByTestId('navBarTitle')
+    expect(getByTestId(correctlyTitle)).toHaveTextContent(data.name)
 })
