@@ -10,7 +10,7 @@
 ### Library explanation
 
 #### React Google Chart
-- The choice of React Google Chart (https://developers.google.com/chart) for rendering the Chart's line was done in order to speed up the work on implementing this chart, instead of being done from scratch. This choice was made because the React Google Chart has a well-structured component, as well as intuitive and practical.
+- The choice of React Google Chart (https://react-google-charts.com/) for rendering the Chart's line was done in order to speed up the work on implementing this chart, instead of being done from scratch. This choice was made because the React Google Chart has a well-structured component, as well as intuitive and practical.
 
 ### Project Install
 
@@ -31,10 +31,8 @@ use `yarn dev` or `npm run dev`
 #### Webpack
   Webpack was chosen again out of pure habit and for ensuring automation and optimization in production. With an easy setup and a documentation showing us step by step, it what makes the Webpack a tool that I will not let go of when it comes to develop.
 #### Jest
-  For our tests, I chose Jest because it's the most used tool on the market nowadays and it has a very intuitive documentation.
+  I chose Jest because it's the most used tool on the market nowadays and it has a very intuitive documentation.
 
-### 
- - Nesse projeto usei o Sass
 
 ##### Data testing in a challenge
 ``` 
