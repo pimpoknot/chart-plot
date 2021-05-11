@@ -1,11 +1,16 @@
 ## Challenge Documentation
 
+### Technologies used
+
+- React
+
 ### Components folder explanation
 
 - TopMenu component is responsible to render Name and top bar.
 - CodeEditor is responsible to input data in JSON format.
 - ChartView component is responsible to render the chart received from google charts component. Inside the chat component, it has another component responsible for a button that sends the information, called ButtonBar.
 - ButtonBar component has a function called callbackGenerateGraphClick which receives data and send to CodeMirror.
+- context are component to ensure the correct structure of a JSON, the text is treated and checked if valid, to return the JSON array.
 
 ### Library explanation
 
@@ -24,7 +29,6 @@ use `yarn dev` or `npm run dev`
 
 #### Eslint
   Eslint was chosen due to some issues I experienced in my career as a Front-End Developer. One of them is the lack of organization and standardization of the code. For this reason, I decided to use the JavaScript Standard format, which has a very intuitive documentation. Eslint, in turn, assists by giving us a precious time that would have been spent on code review.
-  
 #### Husky
   We can use Husky to lint your commit messages, run tests, lint code, etc... when you commit or push. Husky supports all Git hooks.
   The choice of Husky was for pure habit, since I like to guarantee that my commits never perform incorrectly. This insures good practice, according to the standard conventional commits that you can find in this link (https://www.conventionalcommits.org/en/v1.0.0/)
@@ -39,7 +43,7 @@ use `yarn dev` or `npm run dev`
 {type: 'start', timestamp: 1519862400000, select: ['min_response_time', 'max_response_time'], group: ['os', 'browser']}
 {type: 'span', timestamp: 1519862400000, begin: 1519862400000, end: 1519862460000}
 {type: 'data', timestamp: 1519862400000, os: 'linux', browser: 'chrome', min_response_time: 0.5, max_response_time: 1.2}
-{type: 'data', timestamp: 1519862400000, os: 'mac', browser: 'chrome', min_response_time: 0.3, max_response_time: 1.0}
+{type: 'data', timestamp: 1519862400000, os: 'linux', browser: 'chrome', min_response_time: 0.3, max_response_time: 1.0}
 {type: 'data', timestamp: 1519862400000, os: 'mac', browser: 'firefox', min_response_time: 0.1, max_response_time: 1.2}
 {type: 'data', timestamp: 1519862400000, os: 'linux', browser: 'firefox', min_response_time: 0.3, max_response_time: 1.0}
 {type: 'data', timestamp: 1519862460000, os: 'linux', browser: 'chrome', min_response_time: 0.3, max_response_time: 0.4}
