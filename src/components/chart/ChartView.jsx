@@ -22,11 +22,11 @@ export default class ChartView extends React.Component {
   }
 
   /**
-   * Method to execute when user click in generate graph button.
+   * Method to execute when user click in generate chart button.
    * This method will get code editor text, convert it and
-   * plot the new graph
+   * plot the new chart
    */
-  generateGraphClickCallback = () => {
+  generateChartClickCallback = () => {
     this.setState(() => {
       return {
         chartData: getDataTableStruct(this.context.getJSONArray())
@@ -49,7 +49,7 @@ export default class ChartView extends React.Component {
           }}
           data={this.state.chartData}
         />
-        <ButtonBar callbackGenerateGraphClick={this.generateGraphClickCallback} />
+        <ButtonBar callbackGenerateChartClick={this.generateChartClickCallback} />
       </>
     )
   }  
@@ -76,8 +76,6 @@ export function getDataTableStruct(jsonArray) {
  * Function to convert JSON Array to DataTable Scrut.
  * This function only exists because the process takes 
  * 2 steps.
- * If rows == undefined, then return undefined to external
- * caller plot blank graph
  */
 function jsonArry2DataTableStruct(jsonArr) {
   let rows = jsonArray2OrganizedArray(jsonArr);
@@ -91,7 +89,6 @@ function jsonArry2DataTableStruct(jsonArr) {
  * Convert JSON Array to a more readable array. It's
  * important in order to facilitate the conversion
  * to DataTable array struct.
- * All business logic related to the json code are here.
  */
 function jsonArray2OrganizedArray(jsonArr) {
   let out = new Map();

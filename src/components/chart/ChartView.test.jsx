@@ -28,9 +28,9 @@ describe('tests about components inside ChartView', () => {
   });
 
   /**
-   * Test if component have 1 GraphControlBar
+   * Test if component have 1 ButtonBar
    */
-  test('should have 1 GraphControlBar', () => {
+  test('should have 1 ButtonBar', () => {
     let wrapper = shallow(<ChartView />);
     expect(wrapper.find(ButtonBar)).toHaveLength(1);
   });
