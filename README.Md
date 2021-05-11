@@ -17,12 +17,20 @@ use `yarn` or `npm install`
 
 ### Dependencies explanation
 
+<<<<<<< HEAD
 # Eslint
 # Husky
   
 # babel 
 # Webpack
 # Jest
+=======
+Eslint
+Husky
+babel 
+Webpack
+Jest
+>>>>>>> 4cc66b3fa3ace7874e3847dec3ac5665d96be594
 
 
 
