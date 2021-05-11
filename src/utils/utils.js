@@ -1,3 +1,5 @@
+export const TOP_NAVBAR_TEXT = 'Marcos\'s Challenge'
+
 export const FIELD_TYPE = 'type';
 export const FIELD_TIMESTAMP = 'timestamp';
 export const FIELD_SELECT = 'select';

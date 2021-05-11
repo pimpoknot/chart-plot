@@ -1,6 +1,6 @@
 import './style.scss'
 import React from 'react'
-import  { data }  from '../../utils/data'
+import  { TOP_NAVBAR_TEXT }  from '../../utils/utils'
 
 
 export default class TopMenu extends React.Component {
@@ -8,7 +8,7 @@ export default class TopMenu extends React.Component {
     return (
           <div className="navBar-container">
             <nav data-testid="navBar" className="navBar background-topBar">
-              <p data-testid="navBarTitle" className="titleTop-bar">{data.name}</p>
+              <p data-testid="topNavBarName" className="titleTop-bar">{TOP_NAVBAR_TEXT}</p>
             </nav>
           </div>
     )
