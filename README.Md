@@ -31,7 +31,7 @@ use `yarn dev` or `npm run dev`
 #### Webpack
   Webpack was chosen again out of pure habit and for ensuring automation and optimization in production. With an easy setup and a documentation showing us step by step, it what makes the Webpack a tool that I will not let go of when it comes to develop.
 #### Jest
-  I chose Jest because it's the most used tool on the market nowadays and it has a very intuitive documentation.
+  I chose Jest because it's the most used tool on the labor market nowadays and it has a very intuitive documentation.
 
 
 ##### Data testing in a challenge
