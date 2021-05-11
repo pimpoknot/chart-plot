@@ -3,7 +3,6 @@ import 'codemirror/mode/javascript/javascript.js';
 import './CodeMirror.scss'
 import { DATA_CONTEXT } from '../context';
 import {UnControlled} from 'react-codemirror2';
-
 export default class CodeEditor extends React.Component {
 
   render() {
@@ -11,7 +10,7 @@ export default class CodeEditor extends React.Component {
       <UnControlled
         options={{
           mode: 'javascript',
-          theme: '3024-day',
+          theme: 'dracula',
           lineNumbers: true
         }}
         onChange={(editor, data, value) => { this.context.setEditor(value); }}

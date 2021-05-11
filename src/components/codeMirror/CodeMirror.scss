@@ -1,11 +1,12 @@
 @import 'codemirror/lib/codemirror.css';
 @import 'codemirror/theme/material.css';
-
+@import 'codemirror/theme/dracula.css';
 .CodeMirror {
   resize: vertical;
   overflow-x: hidden !important;
   overflow-y: auto !important;
-  font-size: 14x;
+  font-size: 14px;
+  background: #2E3440;
 
     &::-webkit-scrollbar-track {
       background-color: #2E3440;
@@ -21,45 +22,38 @@
       background: #60656E;	
     }
 
-    .cm-s-3024-day {
-      background: #2E3440;
-      color: #C2C4C7;
-    }
     .CodeMirror-gutters {
       background-color: #C2C4C7;
     }
-    .cm-s-3024-day{
-      background: #2E3440;
-      color: #C2C4C7;
+    
+  
+   div {
+    .CodeMirror-selected {
+        background: #303030;
     }
-    .cm-s-3024-day.CodeMirror {
-      background: #2E3440;
-      color: #C2C4C7;
-  }
+   }
   
-  .cm-s-3024-day div.CodeMirror-selected {
-      background: #303030;
-  }
-  
-  .cm-s-3024-day .CodeMirror-gutters {
+  .CodeMirror-gutters {
       background: #60656E;
       border-right: 0px;
   }
   
-  .cm-s-3024-day .CodeMirror-linenumber {
+  .CodeMirror-linenumber {
       color: #313743;
   }
   
-  .cm-s-3024-day span.cm-number {
-      color: #9C72C3;
-  }
+
   
-  .cm-s-3024-day span.cm-string {
-      color: #12b0c0;
-  }
-  
-  .cm-s-3024-day span.cm-variable {
-      color: #C2C4C7;
+  span {
+    .cm-number {
+        color: #9C72C3;
+    }
+      .cm-string {
+        color: #12b0c0;
+      }
+    .cm-variable {
+        color: #C2C4C7;
+    }
   }
   
   
