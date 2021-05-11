@@ -22,17 +22,19 @@ use `yarn dev` or `npm run dev`
 
 ### Dependencies explanation
 
-# Eslint
-  A escolha do Eslint foi feita por conta dos problemas que vivenciei ao longo da minha carreira como Front-end developer. Uma delas é falta e organização e padronização do código, e para isso resolvi usar o formato JavaScript Standard no qual temos uma documentação bem ituitiva.
-  (https://standardjs.com/rules.html)
-# Husky
-  - You can use it to lint your commit messages, run tests, lint code, etc... when you commit or push. Husky supports all Git hooks.
-  A escolha do husky foi por puro costume, sempre gosto de garantir que meus commits jamais sejam commitados de forma errada. Garantindo boas práticas. (https://www.conventionalcommits.org/en/v1.0.0/)
-# Webpack
-  Webpack foi escolhido novamente por puro hábito e por garantir automação e otimização na produção. 
-# Jest
-  Para nossos testes escolhi o jest por ser a ferramenta mais utilizada no mercado atualmente e ter toda documentação bem ituitiva.
+#### Eslint
+  Eslint was chosen due to some issues I experienced in my career as a Front-End Developer. One of them is the lack of organization and standardization of the code. For this reason, I decided to use the JavaScript Standard format, which has a very intuitive documentation. Eslint, in turn, assists by giving us a precious time that would have been spent on code review.
+  
+#### Husky
+  - We can use Husky to lint your commit messages, run tests, lint code, etc... when you commit or push. Husky supports all Git hooks.
+  The choice of Husky was for pure habit, since I like to guarantee that my commits never perform incorrectly. This insures good practice, according to the standard conventional commits that you can find in this link (https://www.conventionalcommits.org/en/v1.0.0/)
+#### Webpack
+  Webpack was chosen again out of pure habit and for ensuring automation and optimization in production. With an easy setup and a documentation showing us step by step, it what makes the Webpack a tool that I will not let go of when it comes to develop.
+#### Jest
+  For our tests, I chose Jest because it's the most used tool on the market nowadays and it has a very intuitive documentation.
 
+### 
+ - Nesse projeto usei o Sass
 
 ##### Data testing in a challenge
 ``` 
