@@ -28,7 +28,6 @@ export default class ChartView extends React.Component {
    */
   generateGraphClickCallback = () => {
     this.setState(() => {
-      console.log('foi')
       return {
         chartData: getDataTableStruct(this.context.getJSONArray())
       }

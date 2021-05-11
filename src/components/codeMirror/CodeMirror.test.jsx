@@ -2,8 +2,10 @@ import React from 'react';
 import { DATA_CONTEXT } from '../context';
 import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import { UnControlled as CodeMirror} from 'react-codemirror2';
+import { UnControlled } from 'react-codemirror2';
 import CodeEditor from './CodeEditor';
+
+configure({ adapter: new Adapter() });
 
 configure({ adapter: new Adapter() });
 
@@ -20,7 +22,7 @@ describe('tests about basic render components', () => {
   */
   test('should have 1 UnControlled CodeMirror component', () => {
     let wrapper = shallow(<CodeEditor />, { context: DATA_CONTEXT });
-    expect(wrapper.find(CodeMirror)).toHaveLength(1);
+    expect(wrapper.find(UnControlled)).toHaveLength(1);
   });
 })
 
@@ -32,7 +34,7 @@ describe('tests about UnControlled CodeMirror component', () => {
     let wrapper = shallow(<CodeEditor />, { context: DATA_CONTEXT });
     let correctOpts = {
       mode: 'javascript',
-      theme: 'material',
+      theme: 'dracula',
       lineNumbers: true
     }
     expect(wrapper.find({ options: correctOpts })).toHaveLength(1);
@@ -45,7 +47,7 @@ describe('tests about UnControlled CodeMirror component', () => {
     let spy = jest.fn();
     let wrapper = shallow(
       <DATA_CONTEXT.Provider>
-        <CodeEditor onChange={spy} />            
+        <UnControlled onChange={spy} />            
       </DATA_CONTEXT.Provider>
     );
     wrapper.props().onChange;
