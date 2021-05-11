@@ -1,6 +1,6 @@
 ## Challenge Documentation
 
-### Components folder explanation
+## Components folder explanation
 
 - TopMenu component is responsible to render Name and top bar.
 - CodeEditor is responsible to input data in JSON format.
