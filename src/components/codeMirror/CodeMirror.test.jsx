@@ -1,47 +1,54 @@
-import React from 'react'
-import CodeEditor from './CodeEditor'
-import { configure, shallow } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
-import { UnControlled as CodeMirror } from 'react-codemirror2'
-import { ContextData } from '../../utils'
+import React from 'react';
+import { DATA_CONTEXT } from '../context';
+import { configure, shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import { UnControlled as CodeMirror} from 'react-codemirror2';
+import CodeEditor from './CodeEditor';
 
-configure({ adapter: new Adapter() })
+configure({ adapter: new Adapter() });
 
-describe('test about basic render components', () => {
-
-  // test if CodeEditor is render correctly
-
+describe('tests about basic render components', () => {
+  /**
+   * Test if InputJSON was render
+   */
   test('should render correctly', () => {
-    shallow(<CodeEditor />, {context: ContextData})
-  })
+    shallow(<CodeEditor />, {context: DATA_CONTEXT});
+  });
 
-  //  test if uncontrolled codemirror was render
-
-  test('should have 1 CodeMirror component', () => {
-    let container = shallow(<CodeEditor />, {context: ContextData})
-    expect(container.find(CodeMirror)).toHaveLength(1)
-  })
+  /**
+  * Test if uncontrolled codemirror was render
+  */
+  test('should have 1 UnControlled CodeMirror component', () => {
+    let wrapper = shallow(<CodeEditor />, { context: DATA_CONTEXT });
+    expect(wrapper.find(CodeMirror)).toHaveLength(1);
+  });
 })
 
-describe('test CodeMirror component', () => {
-  test('should have correct component', () => {
-    let container = shallow(<CodeEditor />, {context: ContextData})
-    let CorrectOptions = {
+describe('tests about UnControlled CodeMirror component', () => {
+  /**
+   * Test if component have uncontrolled codemirror with correct options
+   */
+  test('should have correct options', () => {
+    let wrapper = shallow(<CodeEditor />, { context: DATA_CONTEXT });
+    let correctOpts = {
       mode: 'javascript',
       theme: 'material',
       lineNumbers: true
     }
-    expect(container.find({ options: CorrectOptions })).toHaveLength(1)
-  })
+    expect(wrapper.find({ options: correctOpts })).toHaveLength(1);
+  });
 
+  /**
+   * TODO: back to finish
+   */
   test.skip('should set editor correctly', () => {
-    let spy = jest.fn()
-    let container = shallow(
-      <ContextData.Provider>
-        <CodeMirror onChange={spy} />
-      </ContextData.Provider>
-    )
-    container.props().onChange
-    expect(spy).toHaveBeenCalledTimes(1)
+    let spy = jest.fn();
+    let wrapper = shallow(
+      <DATA_CONTEXT.Provider>
+        <CodeEditor onChange={spy} />            
+      </DATA_CONTEXT.Provider>
+    );
+    wrapper.props().onChange;
+    expect(spy).toHaveBeenCalledTimes(1);
   })
-})
+});

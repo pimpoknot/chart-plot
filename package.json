@@ -16,18 +16,16 @@
     "@babel/core": "^7.14.0",
     "@babel/preset-env": "^7.14.1",
     "@babel/preset-react": "^7.13.13",
-    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^11.2.6",
-    "@types/jest": "^26.0.23",
-    "@types/react": "^17.0.5",
-    "@types/react-dom": "^17.0.3",
+    "@testing-library/user-event": "^13.1.8",
     "@typescript-eslint/eslint-plugin": "^4.22.1",
     "@typescript-eslint/parser": "^4.22.1",
     "babel-loader": "^8.2.2",
     "cross-env": "^7.0.3",
     "css-loader": "^5.2.4",
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^7.25.0",
     "eslint-config-standard-with-typescript": "^11.0.1",
     "eslint-plugin-import": "^2.22.1",
@@ -49,11 +47,17 @@
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.13.0",
-    "codemirror": "^5.61.0",
+    "codemirror": "^5.55.0",
     "identity-obj-proxy": "^3.0.0",
-    "react": "^17.0.2",
+    "react": "^16.13.1",
     "react-codemirror2": "^7.2.1",
-    "react-dom": "^17.0.2",
+    "react-dom": "^16.13.1",
     "react-google-charts": "^3.0.15"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/index.js"
+    ]
   }
 }

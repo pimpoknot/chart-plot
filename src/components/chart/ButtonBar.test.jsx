@@ -1,9 +1,9 @@
 import React from 'react'
 import { configure, shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
-import ButtonBar from '../ButtonBar/ButtonBar'
+import ButtonBar from './ButtonBar'
 import { cleanup } from '@testing-library/react'
-import { data } from '../../utils'
+import  { GENERATE_CHART }  from '../../utils/utils'
 
 
 configure({adapter: new Adapter()})
@@ -20,7 +20,7 @@ describe('test about the render process of ButtonBar component', () => {
   })
 
   test('should have a button with the correctly name', () => {
-    expect(container.find('button').text()).toEqual(data.button)
+    expect(container.find('button').text()).toEqual(GENERATE_CHART)
   })
 })
 

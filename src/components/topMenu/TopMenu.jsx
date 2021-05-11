@@ -1,6 +1,6 @@
 import './style.scss'
 import React from 'react'
-import { data } from '../../utils'
+import  { data }  from '../../utils/data'
 
 
 export default class TopMenu extends React.Component {

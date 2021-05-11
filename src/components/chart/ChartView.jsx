@@ -1,12 +1,10 @@
-import Chart from 'react-google-charts'
 import React from 'react'
-import { ContextData } from '../../utils'
-import ButtonBar from '../ButtonBar/ButtonBar';
-
+import { DATA_CONTEXT } from '../context';
+import ButtonBar from './ButtonBar';
+import { Chart }  from 'react-google-charts'
 
 
 export default class ChartView extends React.Component {
-
 
   constructor(props) {
     super(props);
@@ -30,8 +28,9 @@ export default class ChartView extends React.Component {
    */
   generateGraphClickCallback = () => {
     this.setState(() => {
+      console.log('foi')
       return {
-        chartData: getDataTableStruct(this.context.TransformJSONInArray())
+        chartData: getDataTableStruct(this.context.getJSONArray())
       }
     });
   }
@@ -51,14 +50,14 @@ export default class ChartView extends React.Component {
           }}
           data={this.state.chartData}
         />
-        <ButtonBar generateGraphClickCallback={this.generateGraphClickCallback}/>
+        <ButtonBar callbackGenerateGraphClick={this.generateGraphClickCallback} />
       </>
     )
   }  
 }
 
 
-ChartView.contextType = ContextData
+ChartView.contextType = DATA_CONTEXT
 
 export function getDataTableStruct(jsonArray) {
   // convert json array to chart struct array
@@ -102,9 +101,9 @@ function jsonArray2OrganizedArray(jsonArr) {
   let alreadyStop = false;
   for (let i = 0; i < jsonArr.length; i++) {
     let json = jsonArr[i];
-    let type = json[FIELD_TYPE];
+    let type = json['type'];
     // if find a new start, then reset all previous job
-    if (type === TYPE_START) {
+    if (type === 'start') {
       out = new Map();
       instablePairs = [];
       begin = undefined;
@@ -113,23 +112,23 @@ function jsonArray2OrganizedArray(jsonArr) {
     }
     // if span and doest not have begin or end, then set values
     // else show error because span already defined for this start
-    else if (type === TYPE_SPAN && !alreadyStop) {
+    else if (type === 'span' && !alreadyStop) {
       if(begin) {
-        showError(ERROR_ONLY_ONE_SPAN_BEGIN);
+        showError('Should not have two events of type SPAN to set begin');
         return undefined;
       }
-      begin = json[FIELD_BEGIN];
+      begin = json['begin'];
       if(end) {
-        showError(ERROR_ONLY_ONE_SPAN_END);
+        showError('Should not have two events of type SPAN to set end');
         return undefined;
       }
-      end = json[FIELD_END];
+      end = json['end'];
     }
     // if data, check if is valid and add value
-    else if (type === TYPE_DATA && !alreadyStop) {
-      let ts = json[FIELD_TIMESTAMP];
+    else if (type === 'data' && !alreadyStop) {
+      let ts = json['timestamp'];
       if(!begin || !end) {
-        showError(ERROR_DATA_BEFORE_SPAN);
+        showError('Should insert SPAN event with \'begin\' and \'end\', first of DATA event');
         return undefined;
       }
       // only add if timestamp between being and end
@@ -151,7 +150,7 @@ function jsonArray2OrganizedArray(jsonArr) {
       }
     } 
     // if stop type, then set control variable
-    else if(type === TYPE_STOP) {
+    else if(type === 'stop') {
       alreadyStop = true;
     }
   }
@@ -172,9 +171,9 @@ function showError(msg) {
  */
 function generateDataObject(json) {
   let aux = {
-    pair: json[FIELD_OS] + ' ' + json[FIELD_BROWSER],
-    minVal: json[FIELD_MIN],
-    maxVal: json[FIELD_MAX]
+    pair: json['os'] + ' ' + json['browser'],
+    minVal: json['min_response_time'],
+    maxVal: json['max_response_time']
   }
   return aux;
 }
