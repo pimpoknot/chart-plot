@@ -26,7 +26,7 @@ use `yarn dev` or `npm run dev`
   Eslint was chosen due to some issues I experienced in my career as a Front-End Developer. One of them is the lack of organization and standardization of the code. For this reason, I decided to use the JavaScript Standard format, which has a very intuitive documentation. Eslint, in turn, assists by giving us a precious time that would have been spent on code review.
   
 #### Husky
-  - We can use Husky to lint your commit messages, run tests, lint code, etc... when you commit or push. Husky supports all Git hooks.
+  We can use Husky to lint your commit messages, run tests, lint code, etc... when you commit or push. Husky supports all Git hooks.
   The choice of Husky was for pure habit, since I like to guarantee that my commits never perform incorrectly. This insures good practice, according to the standard conventional commits that you can find in this link (https://www.conventionalcommits.org/en/v1.0.0/)
 #### Webpack
   Webpack was chosen again out of pure habit and for ensuring automation and optimization in production. With an easy setup and a documentation showing us step by step, it what makes the Webpack a tool that I will not let go of when it comes to develop.
