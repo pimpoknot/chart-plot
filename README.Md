@@ -1,15 +1,15 @@
 ## Challenge Documentation
 
-## Components folder explanation
+#### Components folder explanation
 
 - TopMenu component is responsible to render Name and top bar.
 - CodeEditor is responsible to input data in JSON format.
 - ChartView component is responsible to render the chart received from google charts component. Inside the chat component, it has another component responsible for a button that sends the information, called ButtonBar.
 - ButtonBar component has a function called callbackGenerateGraphClick which receives data and send to CodeMirror.
 
-## Library explanation
+### Library explanation
 
-### React Google Chart
+#### React Google Chart
 - The choice of React Google Chart (https://developers.google.com/chart) for rendering the Chart's line was done in order to speed up the work on implementing this chart, instead of being done from scratch. This choice was made because the React Google Chart has a well-structured component, as well as intuitive and practical.
 
 ### Project Install
