@@ -12,11 +12,11 @@ use `yarn` or `npm install`
 
 ### Dependencies
 
-# Eslint
-# Husky
-# babel 
-# Webpack
-# Jest
+Eslint
+Husky
+babel 
+Webpack
+Jest
 
 
 
